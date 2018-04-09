@@ -1,0 +1,9 @@
+..\OBJ\cjson.o: ..\EDP\cJSON.c
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\math.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\float.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\limits.h
+..\OBJ\cjson.o: d:\Keil\ARM\ARMCC\bin\..\include\ctype.h
+..\OBJ\cjson.o: ..\EDP\cJSON.h
