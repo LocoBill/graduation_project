@@ -17,3 +17,4 @@
 ..\OBJ\main.o: ..\SYSTEM\usart\usart.h
 ..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 ..\OBJ\main.o: ..\HARDWARE\USART2\usart2.h
+..\OBJ\main.o: ..\SIM808\SIM808.h

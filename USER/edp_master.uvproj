@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP;..\SIM808</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -500,6 +500,16 @@
               <FileName>EdpKit.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\EDP\EdpKit.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SIM808</GroupName>
+          <Files>
+            <File>
+              <FileName>SIM808.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SIM808\SIM808.c</FilePath>
             </File>
           </Files>
         </Group>

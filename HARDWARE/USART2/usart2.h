@@ -13,7 +13,8 @@
 //Copyright(C) 广州市星翼电子科技有限公司 2009-2019
 //All rights reserved									  
 ////////////////////////////////////////////////////////////////////////////////// 	     
- 
+#define MAX_RCV_LEN  1024
+#define MAX_CMD_LEN  256
 #define USART2_MAX_RECV_LEN		1024				//最大接收缓存字节数
 #define USART2_MAX_SEND_LEN		1024				//最大发送缓存字节数
 #define USART2_RX_EN 			1					//0,不接收;1,接收.

@@ -73,6 +73,7 @@ void USART2_Init(u32 pclk1,u32 bound)
 	TIM4_Set(1);			//关闭定时器4
 #endif										  	
 }
+
 //串口2,printf 函数
 //确保一次发送数据不超过USART2_MAX_SEND_LEN字节
 void u2_printf(char* fmt,...)  
