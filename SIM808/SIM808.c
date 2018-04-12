@@ -95,12 +95,12 @@ u8 send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 */
 void gprs_init()
 {
-	 send_cmd("AT","OK",10);		
-  send_cmd("AT+CGCLASS=\"B\"","OK",10);				//设置GPRS移动台类别为B,支持包交换和数据交换 
-  send_cmd("AT+CGDCONT=1,\"IP\",\"CMNET\"","OK",10);//设置PDP上下文,互联网接协议,接入点等信息
-  send_cmd("AT+CGATT=1","OK",10);					//附着GPRS业务
-  send_cmd("AT+CIPCSGP=1,\"CMNET\"","OK",10);	 	//设置为GPRS连接模式
-  send_cmd("AT+CLPORT=\"TCP\"\,\"2000\"","OK",10);	 				//设置接收数据显示IP头(方便判断数据来源)
+	 send_cmd("AT","OK",100);		
+  send_cmd("AT+CGCLASS=\"B\"","OK",100);				//设置GPRS移动台类别为B,支持包交换和数据交换 
+  send_cmd("AT+CGDCONT=1,\"IP\",\"CMNET\"","OK",100);//设置PDP上下文,互联网接协议,接入点等信息
+  send_cmd("AT+CGATT=1","OK",100);					//附着GPRS业务
+  send_cmd("AT+CIPCSGP=1,\"CMNET\"","OK",100);	 	//设置为GPRS连接模式
+  send_cmd("AT+CLPORT=\"TCP\"\,\"2000\"","OK",100);	 				//设置接收数据显示IP头(方便判断数据来源)
 
 }
 
