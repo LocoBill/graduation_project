@@ -116,6 +116,8 @@ void SIM808_DevLink(const char* devid, const char* auth_key, int timeOut)
 		
 	  send_cmd("AT+CIPMODE=1","OK",100);	
     send_cmd("AT+CIPSTART=\"TCP\",\"183.230.40.39\",\"876\"","OK",100); 
+// 			usart2_write(USART2,CIPMODE,strlen(CIPMODE));
+// 	    usart2_write(USART2,CIPSTART,strlen(CIPSTART));
 		for(count=0;count<timeOut;count++)
 		{
 				delay_ms(100);
@@ -125,14 +127,14 @@ void SIM808_DevLink(const char* devid, const char* auth_key, int timeOut)
 				}
 		}	
 
-// 		send_pkg = PacketConnect1(devid,auth_key);
-// 		delay_ms(200);
-// 		//usart2_write(USART2,send_pkg->_data,send_pkg->_write_pos);  //??????????
-// 		u2_printf("%s",send_pkg->_data);
-// 		delay_ms(500);
-// 		DeleteBuffer(&send_pkg);
-// 		delay_ms(200);
-// 		//usart2_write(USART2,"+++",3);  //?ESP8266??+++????,?ESP8266??????
+ 		send_pkg = PacketConnect1(devid,auth_key);
+ 		delay_ms(200);
+ 		usart2_write(USART2,send_pkg->_data,send_pkg->_write_pos);  //??????????
+ 		//u2_printf("%s",send_pkg->_data);
+ 		delay_ms(1000);
+ 		DeleteBuffer(&send_pkg);
+ 		delay_ms(200);
+ //		usart2_write(USART2,"+++",3);  //?ESP8266??+++????,?ESP8266??????
 // 		u2_printf("+++");
 // 		delay_ms(50);
 }

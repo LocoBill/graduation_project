@@ -16,6 +16,15 @@
 #define LED0 PBout(5)// PB5
 #define LED1 PEout(5)// PE5	
 
+#define  DS0_ON      GPIO_ResetBits(GPIOB,GPIO_Pin_5)
+#define  DS1_ON      GPIO_ResetBits(GPIOE,GPIO_Pin_5)
+
+
+
+#define  DS0_OFF      GPIO_SetBits(GPIOB,GPIO_Pin_5)
+#define  DS1_OFF      GPIO_SetBits(GPIOE,GPIO_Pin_5)
+
+
 void LED_Init(void);//≥ı ºªØ
 
 		 				    

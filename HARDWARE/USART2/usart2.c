@@ -35,7 +35,8 @@ void USART2_IRQHandler(void)
 	u8 res;	    
 	if(USART2->SR&(1<<5))//接收到数据
 	{	 
-		res=USART2->DR; 			 
+		res=USART2->DR; 	
+
 		if(USART2_RX_STA<USART2_MAX_RECV_LEN)		//还可以接收数据
 		{
 			TIM4->CNT=0;         					//计数器清空
@@ -45,6 +46,7 @@ void USART2_IRQHandler(void)
 		{
 			USART2_RX_STA|=1<<15;					//强制标记接收完成
 		} 
+	// USART_SendData(USART1,res);		
 	}  											 
 }   
 //初始化IO 串口2
@@ -149,6 +151,20 @@ void UART_DMA_Enable(DMA_Channel_TypeDef*DMA_CHx,u16 len)
 	DMA_CHx->CNDTR=len;          //DMA1,传输数据量 
 	DMA_CHx->CCR|=1<<0;          //开启DMA传输
 }	   
+
+/**
+  * @brief  USART2???????
+**/
+void usart2_write(USART_TypeDef* USARTx, uint8_t *Data,uint32_t len)
+{
+    uint32_t i;
+		USART_ClearFlag(USART2,USART_FLAG_TC); 
+    for(i=0; i<len; i++)
+    {                                         
+        USART_SendData(USARTx, *Data++);
+        while( USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET );
+    }
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 									 
 
 
