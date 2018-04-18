@@ -18,3 +18,14 @@
 ..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 ..\OBJ\main.o: ..\HARDWARE\USART2\usart2.h
 ..\OBJ\main.o: ..\SIM808\SIM808.h
+..\OBJ\main.o: ..\SIM808\a6.h
+..\OBJ\main.o: ..\HARDWARE\USART3\usart3.h
+..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\string.h
+..\OBJ\main.o: ..\EDP\EdpDemo.h
+..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+..\OBJ\main.o: ..\EDP\EdpKit.h
+..\OBJ\main.o: ..\EDP\Common.h
+..\OBJ\main.o: ..\EDP\cJSON.h
+..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\time.h
+..\OBJ\main.o: ..\HARDWARE\USART3\usart3.h
+..\OBJ\main.o: ..\EDP\utils.h

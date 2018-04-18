@@ -12,7 +12,7 @@
 #define   CIPMODE         "AT+CIPMODE=1"
 #define   CIPSTART        "AT+CIPSTART=\"TCP\",\"183.230.40.39\",\"876\""
 
-#define   DEVICEID   "124301"
+#define   DEVICEID   "29547520"
 #define   APIKEY     "28QOImqxBAIP6Vx34h9WqWyrsDo="
 
 extern char send_buf[MAX_SEND_BUF_LEN];

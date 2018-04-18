@@ -7,6 +7,8 @@
 ### List of Objects: adding '"..\obj\led.o"'
 ### List of Objects: adding '"..\obj\key.o"'
 ### List of Objects: adding '"..\obj\usart2.o"'
+### List of Objects: adding '"..\obj\usart3.o"'
+### List of Objects: adding '"..\obj\timer.o"'
 ### List of Objects: adding '"..\obj\delay.o"'
 ### List of Objects: adding '"..\obj\sys.o"'
 ### List of Objects: adding '"..\obj\usart.o"'
@@ -18,9 +20,12 @@
 ### List of Objects: adding '"..\obj\stm32f10x_usart.o"'
 ### List of Objects: adding '"..\obj\cjson.o"'
 ### List of Objects: adding '"..\obj\edpkit.o"'
+### List of Objects: adding '"..\obj\edpdemo.o"'
+### List of Objects: adding '"..\obj\utils.o"'
 ### List of Objects: adding '"..\obj\sim808.o"'
+### List of Objects: adding '"..\obj\a6.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "..\obj\main.o" "..\obj\stm32f10x_it.o" "..\obj\system_stm32f10x.o" "..\obj\led.o" "..\obj\key.o" "..\obj\usart2.o" "..\obj\delay.o" "..\obj\sys.o" "..\obj\usart.o" "..\obj\core_cm3.o" "..\obj\startup_stm32f10x_hd.o" "..\obj\misc.o" "..\obj\stm32f10x_gpio.o" "..\obj\stm32f10x_rcc.o" "..\obj\stm32f10x_usart.o" "..\obj\cjson.o" "..\obj\edpkit.o" "..\obj\sim808.o" 
+--cpu Cortex-M3 "..\obj\main.o" "..\obj\stm32f10x_it.o" "..\obj\system_stm32f10x.o" "..\obj\led.o" "..\obj\key.o" "..\obj\usart2.o" "..\obj\usart3.o" "..\obj\timer.o" "..\obj\delay.o" "..\obj\sys.o" "..\obj\usart.o" "..\obj\core_cm3.o" "..\obj\startup_stm32f10x_hd.o" "..\obj\misc.o" "..\obj\stm32f10x_gpio.o" "..\obj\stm32f10x_rcc.o" "..\obj\stm32f10x_usart.o" "..\obj\cjson.o" "..\obj\edpkit.o" "..\obj\edpdemo.o" "..\obj\utils.o" "..\obj\sim808.o" "..\obj\a6.o" 
 --strict --scatter "..\OBJ\USART.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -28,7 +33,7 @@
 ### ADS-LD Output File: '..\OBJ\USART.axf'
 ### ADS-LD Command File: '..\OBJ\USART.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '..\OBJ\USART.lnp', Handle=0x000009CC
+### Creating CmdFile '..\OBJ\USART.lnp', Handle=0x00000CFC
 ### Writing '.lnp' file
 ### ADS-LD Command file '..\OBJ\USART.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

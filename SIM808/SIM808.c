@@ -80,7 +80,11 @@ u8 send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 			delay_ms(10);
 			if(USART2_RX_STA&0X8000)//接收到期待的应答结果
 			{
-				if(sim_check_cmd(ack))break;//得到有效数据 
+				if(sim_check_cmd(ack))
+					{ 
+				printf("%s %d cmd:%s,rsp:%s\n", __func__, __LINE__, cmd, USART2_RX_BUF);
+				break;//得到有效数据 
+				}//得到有效数据 
 				USART2_RX_STA=0;
 			} 
 		}
