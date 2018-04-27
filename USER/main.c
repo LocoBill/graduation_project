@@ -9,11 +9,15 @@
 #include "usart3.h"	
 #include <string.h>
 #include "EdpDemo.h"
+#include "stdio.h"
 
 #define callbuf  "13540328279"
-int8_t  src_api_key[] = "28QOImqxBAIP6Vx34h9WqWyrsDo=";
-int8_t  src_dev[] = "29547977";
+ int8_t  src_api_key[] = "4=FIl6GSKGpTo5MFQrDHuxVrlUA=";
+ int8_t  src_dev[] = "29547977"; 
 extern volatile uint32_t   usart3_rcv_len;
+
+
+
  int main(void)
  {		
  	u8 key=0;
@@ -31,6 +35,8 @@ extern volatile uint32_t   usart3_rcv_len;
   //  send_cmd("AT+CIPSTART=\"TCP\",\"183.230.40.39\",\"876\"","OK",10);
  	while(1)
 	{
+	
+	
 // 					key=KEY_Scan(0); 
 // 			if(key)
 // 			{
@@ -44,24 +50,30 @@ extern volatile uint32_t   usart3_rcv_len;
 // 						break;
 // 					case KEY_UP:
 // 						DS0_ON;
-// 						gprs_init();
+// 						SIM808_CONNECT();
 // 					  DS0_OFF;
 // 						break;
 // 				}
 // 			
 // 				
 // 			} 			
+// 		
+// 		
+ 	//		delay_ms(2000);
+// 			Connect_RequestType1(src_dev, src_api_key);
+			
+ 		SIM808_CONNECT();//A6连接onenet，检查连接状态
+
+ //		memset(USART3_RX_BUF, 0, strlen((const char *)USART3_RX_BUF));
+   //      usart3_rcv_len = 0;  
+ 	
+	//	while(1);
+	//	Ping_Server();   
+ //       Save_Pm2p5ToOneNet();
+	//	Ping_Server();
 		
-		
-		A6_CONNECT();//A6连接onenet，检查连接状态
-		memset(USART3_RX_BUF, 0, strlen((const char *)USART3_RX_BUF));
-        usart3_rcv_len = 0;  
-		Connect_RequestType1(src_dev, src_api_key);
-		Ping_Server();   
-        Save_Pm2p5ToOneNet();
-		Ping_Server();
-		
-		
+		restful_send(src_dev, src_api_key);
+ 		delay_ms(2000);
 	}	 
  }
 

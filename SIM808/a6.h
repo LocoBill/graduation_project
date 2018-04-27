@@ -15,14 +15,14 @@
 //******************************************************************************** 
 //无
 /////////////////////////////////////////////////////////////////////////////////// 	
-  
+
 #define swap16(x) (x&0XFF)<<8|(x&0XFF00)>>8		//高低字节交换宏定义	
 u8* check_cmd(u8 *str);
 u8 SendCmd(u8 *cmd,u8 *ack,u16 waittime);
 u8 chr2hex(u8 chr);
 u8 hex2chr(u8 hex);
-void A6_Init(void);
-void A6_CONNECT(void);
+void SIM808_Init(void);
+void SIM808_CONNECT(void);
 #endif
 
 

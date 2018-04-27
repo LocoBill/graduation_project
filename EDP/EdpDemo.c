@@ -19,6 +19,7 @@
 #include "delay.h"
 #include "sys.h" 
 #include "led.h"
+char buf[]={0x1A,0x0D,0x0A};
 extern int8_t  src_api_key[] ;
 extern int8_t  src_dev[] ;
 extern volatile uint32_t   usart3_rcv_len;
@@ -267,22 +268,39 @@ void Recv_Thread_Func(void)
 
 void Connect_RequestType1(int8_t *devid, int8_t *api_key)
 {
-    EdpPacket *send_pkg;
-	int t=20,dosend_flag=0;
-	u8 s[2]="OK";
-    send_pkg = PacketConnect1(devid, api_key);
-    if(send_pkg == NULL)
-    {
-        return;
-    }
-    printf("send connect to server, bytes: %d\n", send_pkg->_write_pos);
-   cntflag=SendCmd("AT+CIPSEND=50",">",1000);
+     EdpPacket *send_pkg;
+ 	int t=20,dosend_flag=0;
+ 	u8 s[2]="OK";
+     send_pkg = PacketConnect1(devid, api_key);
+     if(send_pkg == NULL)
+     {
+         return;
+     }
+     printf("send connect to server, bytes: %d\n", send_pkg->_write_pos);
+ 		 SendCmd("AT+CIPSTART=\"TCP\",\"183.230.40.33\",80","OK", 1000);
+		 SendCmd("at+cipstatus?","CONNECT OK", 1000);
+    cntflag=SendCmd("AT+CIPSEND",">",1000);
+ 		printf("AT+CIPSEND----%d",cntflag);
+		printf("pocet: %s\n",send_pkg->_data);
    dosend_flag = DoSend(0, (const uint8_t *)send_pkg->_data, send_pkg->_write_pos);
     delay_ms(500);//加上此句OK
 		printf("dosend_flag: %d\n  ", dosend_flag);
 	DeleteBuffer(&send_pkg);//加上此句OK
 	USART3_RX_STA=0;
 
+
+}
+
+void restful_send(int8_t *devid, int8_t *api_key)
+{
+		int t=20,dosend_flag=0;
+	  SendCmd("AT+CIPSTART=\"TCP\",\"183.230.40.33\",80","OK", 1000);
+		SendCmd("at+cipstatus?","CONNECT OK", 1000);
+    cntflag=SendCmd("AT+CIPSEND",">",1000);
+ 		printf("AT+CIPSEND----%d",cntflag);
+		SendCmd("POST /devices/29547977/datapoints HTTP/1.1\r\napi-key:4=FIl6GSKGpTo5MFQrDHuxVrlUA=\r\nHost:api.hecloud.com\r\nContent-Length:64\r\n\r\n{\"datastreams\":[{\"id\":\"sys_time\",\"datapoints\":[{\"value\":20}]}]}\r\n",NULL,100);
+//	 u3_printf("%x\r\n",26);
+		DoSend(0, buf,strlen(buf));
 }
 /*
  *  @brief  发送PING包维持心跳
@@ -305,7 +323,7 @@ void Save_Pm2p5ToOneNet(void)
 {
     char buf3[30];
 	EdpPacket* send_pkg;
-    send_pkg = PacketSavedataInt(kTypeSimpleJsonWithoutTime, NULL, NULL, (uint32_t) Conce_PM2_5, 0, NULL);
+    send_pkg = PacketSavedataInt(kTypeSimpleJsonWithoutTime, NULL, "test", (uint32_t) Conce_PM2_5, 0, NULL);
     sprintf(buf3,"AT+CIPSEND=%d",send_pkg->_write_pos );
    sendflag=SendCmd(buf3,">",1000);
     DoSend(0, (const uint8_t *)send_pkg->_data,send_pkg->_write_pos);	

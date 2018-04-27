@@ -43,6 +43,9 @@ void Connect_RequestType1(int8_t *devid, int8_t *api_key);
 * @param  sockfd：兼容linux socket api: STM32下无意义
  * @retval 发送的数据长度
  **/
+ 
+ void restful_send(int8_t *devid, int8_t *api_key); //loco  RESFUL API 发送数据
+ 
 int32_t DoSend(int32_t sockfd, const uint8_t *buffer, uint32_t len);
 
 /*

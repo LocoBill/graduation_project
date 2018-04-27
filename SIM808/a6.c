@@ -8,6 +8,7 @@
 //返回值:0,没有得到期待的应答结果
 //    其他,期待应答结果的位置(str的位置)
 u8 tcpflag=1;//未连接或者closed
+
 u8* check_cmd(u8 *str)
 {
 	char *strx=0;
@@ -72,18 +73,26 @@ u8 hex2chr(u8 hex)
 	if(hex>=10&&hex<=15)return (hex-10+'A'); 
 	return '0';
 }
-void A6_Init(void)
+void SIM808_Init(void)
 {	  
 	  SendCmd("AT","OK",100);
 	  SendCmd("ATE0","OK",200);
 	  SendCmd("AT+CGATT=1","OK",1000);
 	  SendCmd("AT+CGACT=1,1","OK",1000);
-      SendCmd("AT+CIPSTART=\"TCP\",\"183.230.40.39\",876","OK", 1000);
- 	  tcpflag=SendCmd("at+cipstatus?","CONNECT OK", 1000);
-}	
-void A6_CONNECT()
+  //   SendCmd("AT+CIPSTART=\"TCP\",\"183.230.40.33\",80","OK", 1000);
+ 	  
+// 	 SendCmd("AT","OK",100);
+// 	 SendCmd("AT+CGCLASS=\"B\"","OK",200);
+// 	SendCmd("AT+CGDCONT=1,\"IP\",\"CMNET\"","OK",200);
+// 	 SendCmd("AT+CGATT=1","OK",200);
+// 	SendCmd("AT+CIPCSGP=1,\"CMNET\"","OK",100);
+// 	SendCmd("AT+CLPORT=\"TCP\",\"2000\"","OK",100);
+	
+	 
+	}	
+void SIM808_CONNECT()
 {	
-  A6_Init();	   
+  SIM808_Init();	   
 }
 
 
