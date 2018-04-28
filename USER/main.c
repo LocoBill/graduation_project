@@ -20,6 +20,7 @@ extern volatile uint32_t   usart3_rcv_len;
 
  int main(void)
  {		
+	int8 data1=0;
  	u8 key=0;
 	delay_init();	    	 //延时函数初始化	  
   USART2_Init(36,115200);
@@ -72,7 +73,7 @@ extern volatile uint32_t   usart3_rcv_len;
  //       Save_Pm2p5ToOneNet();
 	//	Ping_Server();
 		
-		restful_send(src_dev, src_api_key);
+		restful_send(src_dev, src_api_key,data1);
  		delay_ms(2000);
 	}	 
  }

@@ -291,16 +291,18 @@ void Connect_RequestType1(int8_t *devid, int8_t *api_key)
 
 }
 
-void restful_send(int8_t *devid, int8_t *api_key)
+void restful_send(int8_t *devid, int8_t *api_key,int8_t send_data)
 {
 		int t=20,dosend_flag=0;
+	  char sendbuf[200];
 	  SendCmd("AT+CIPSTART=\"TCP\",\"183.230.40.33\",80","OK", 1000);
 		SendCmd("at+cipstatus?","CONNECT OK", 1000);
     cntflag=SendCmd("AT+CIPSEND",">",1000);
  		printf("AT+CIPSEND----%d",cntflag);
-		SendCmd("POST /devices/29547977/datapoints HTTP/1.1\r\napi-key:4=FIl6GSKGpTo5MFQrDHuxVrlUA=\r\nHost:api.hecloud.com\r\nContent-Length:64\r\n\r\n{\"datastreams\":[{\"id\":\"sys_time\",\"datapoints\":[{\"value\":20}]}]}\r\n",NULL,100);
-//	 u3_printf("%x\r\n",26);
-		DoSend(0, buf,strlen(buf));
+  //	SendCmd("POST /devices/29547977/datapoints HTTP/1.1\r\napi-key:4=FIl6GSKGpTo5MFQrDHuxVrlUA=\r\nHost:api.hecloud.com\r\nContent-Length:64\r\n\r\n{\"datastreams\":[{\"id\":\"sys_time\",\"datapoints\":[{\"value\":20}]}]}\r\n",NULL,100);
+	 sprintf(sendbuf,"POST /devices/29547977/datapoints HTTP/1.1\r\napi-key:4=FIl6GSKGpTo5MFQrDHuxVrlUA=\r\nHost:api.hecloud.com\r\nContent-Length:64\r\n\r\n{\"datastreams\":[{\"id\":\"sys_time\",\"datapoints\":[{\"value\":%d}]}]}\r\n",send_data);
+	 SendCmd(sendbuf,NULL,100);  	
+   DoSend(0, buf,strlen(buf));
 }
 /*
  *  @brief  发送PING包维持心跳
