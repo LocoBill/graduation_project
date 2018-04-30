@@ -1,5 +1,5 @@
 Dependencies for Project 'edp_master', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5AE45305)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\USART2 -I..\EDP -I..\SIM808 -I..\HARDWARE\USART3 -I..\HARDWARE\TIME -I d:\Keil\ARM\RV31\INC -I d:\Keil\ARM\CMSIS\Include -I d:\Keil\ARM\Inc\ST\STM32F10x -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\main.o" --omf_browse "..\OBJ\main.crf" --depend "..\OBJ\main.d")
+F (.\main.c)(0x5AE7118B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\USART2 -I..\EDP -I..\SIM808 -I..\HARDWARE\USART3 -I..\HARDWARE\TIME -I d:\Keil\ARM\RV31\INC -I d:\Keil\ARM\CMSIS\Include -I d:\Keil\ARM\Inc\ST\STM32F10x -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\main.o" --omf_browse "..\OBJ\main.crf" --depend "..\OBJ\main.d")
 I (..\HARDWARE\LED\led.h)(0x5AD0A7B1)
 I (..\SYSTEM\sys\sys.h)(0x5ACB622B)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
@@ -21,7 +21,7 @@ I (..\SIM808\SIM808.h)(0x5AD74776)
 I (..\SIM808\a6.h)(0x5AE1D977)
 I (..\HARDWARE\USART3\usart3.h)(0x587DE02F)
 I (d:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (..\EDP\EdpDemo.h)(0x5AE45305)
+I (..\EDP\EdpDemo.h)(0x5AE7116C)
 I (d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x50F96150)
 I (..\EDP\EdpKit.h)(0x5ACE1018)
 I (..\EDP\Common.h)(0x57568850)
@@ -231,7 +231,7 @@ I (d:\Keil\ARM\ARMCC\bin\..\include\time.h)(0x5ACE1018)
 I (..\EDP\EdpKit.h)(0x5ACE1018)
 I (..\EDP\Common.h)(0x57568850)
 I (..\EDP\cJSON.h)(0x57568850)
-F (..\EDP\EdpDemo.c)(0x5AE455A1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\USART2 -I..\EDP -I..\SIM808 -I..\HARDWARE\USART3 -I..\HARDWARE\TIME -I d:\Keil\ARM\RV31\INC -I d:\Keil\ARM\CMSIS\Include -I d:\Keil\ARM\Inc\ST\STM32F10x -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\edpdemo.o" --omf_browse "..\OBJ\edpdemo.crf" --depend "..\OBJ\edpdemo.d")
+F (..\EDP\EdpDemo.c)(0x5AE711DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\USART2 -I..\EDP -I..\SIM808 -I..\HARDWARE\USART3 -I..\HARDWARE\TIME -I d:\Keil\ARM\RV31\INC -I d:\Keil\ARM\CMSIS\Include -I d:\Keil\ARM\Inc\ST\STM32F10x -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\edpdemo.o" --omf_browse "..\OBJ\edpdemo.crf" --depend "..\OBJ\edpdemo.d")
 I (d:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x50F96150)
 I (d:\Keil\ARM\ARMCC\bin\..\include\stdlib.h)(0x50F96150)
 I (d:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
@@ -252,7 +252,7 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\USART3\usart3.h)(0x587DE02F)
 I (..\SYSTEM\sys\sys.h)(0x5ACB622B)
 I (..\EDP\utils.h)(0x5797998E)
-I (..\EDP\EdpDemo.h)(0x5AE45305)
+I (..\EDP\EdpDemo.h)(0x5AE7116C)
 I (..\SIM808\a6.h)(0x5AE1D977)
 I (..\SYSTEM\delay\delay.h)(0x50513B7A)
 I (..\HARDWARE\LED\led.h)(0x5AD0A7B1)

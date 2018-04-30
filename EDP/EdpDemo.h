@@ -44,7 +44,7 @@ void Connect_RequestType1(int8_t *devid, int8_t *api_key);
  * @retval 发送的数据长度
  **/
  
- void restful_send(int8_t *devid, int8_t *api_key,int8_t send_data); //loco  RESFUL API 发送数据
+ void restful_send(int8_t *devid, int8_t *api_key,const char *de_id,int send_data); //loco  RESFUL API 发送数据
  
 int32_t DoSend(int32_t sockfd, const uint8_t *buffer, uint32_t len);
 
