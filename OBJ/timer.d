@@ -6,8 +6,10 @@
 ..\OBJ\timer.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\OBJ\timer.o: ..\USER\system_stm32f10x.h
 ..\OBJ\timer.o: ..\USER\stm32f10x_conf.h
-..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\OBJ\timer.o: ..\USER\stm32f10x.h
+..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
 ..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
 ..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\OBJ\timer.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h

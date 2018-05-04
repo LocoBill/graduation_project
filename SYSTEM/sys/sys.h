@@ -97,7 +97,10 @@
 #define SWD_ENABLE         0X01
 #define JTAG_SWD_ENABLE    0X00	
 
+
 /////////////////////////////////////////////////////////////////  
+void NVIC_Configuration(void);
+
 void Stm32_Clock_Init(u8 PLL);  //时钟初始化  
 void Sys_Soft_Reset(void);      //系统软复位
 void Sys_Standby(void);         //待机模式 	

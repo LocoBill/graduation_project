@@ -6,8 +6,10 @@
 ..\OBJ\a6.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\OBJ\a6.o: ..\USER\system_stm32f10x.h
 ..\OBJ\a6.o: ..\USER\stm32f10x_conf.h
-..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\OBJ\a6.o: ..\USER\stm32f10x.h
+..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
 ..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
 ..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\OBJ\a6.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h

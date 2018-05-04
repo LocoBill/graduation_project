@@ -27,6 +27,14 @@
 //1,修改头文件为stm32f10x.h,不再使用stm32f10x_lib.h及其相关头文件
 ////////////////////////////////////////////////////////////////////////////////// 	  
 
+
+void NVIC_Configuration(void)
+{
+
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//设置NVIC中断分组2:2位抢占优先级，2位响应优先级
+
+}
+
 //设置向量表偏移地址
 //NVIC_VectTab:基址
 //Offset:偏移量			 

@@ -6,8 +6,10 @@
 ..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\OBJ\main.o: ..\USER\system_stm32f10x.h
 ..\OBJ\main.o: ..\USER\stm32f10x_conf.h
-..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\OBJ\main.o: ..\USER\stm32f10x.h
+..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
 ..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
 ..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\OBJ\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
@@ -29,3 +31,5 @@
 ..\OBJ\main.o: d:\Keil\ARM\ARMCC\bin\..\include\time.h
 ..\OBJ\main.o: ..\HARDWARE\USART3\usart3.h
 ..\OBJ\main.o: ..\EDP\utils.h
+..\OBJ\main.o: ..\HARDWARE\LCD\lcd.h
+..\OBJ\main.o: ..\HARDWARE\ITEMP\tsensor.h

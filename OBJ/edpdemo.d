@@ -11,8 +11,10 @@
 ..\OBJ\edpdemo.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\OBJ\edpdemo.o: ..\USER\system_stm32f10x.h
 ..\OBJ\edpdemo.o: ..\USER\stm32f10x_conf.h
-..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\OBJ\edpdemo.o: ..\USER\stm32f10x.h
+..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
 ..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
 ..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\OBJ\edpdemo.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h

@@ -4,8 +4,10 @@
 ..\OBJ\sim808.o: d:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 ..\OBJ\sim808.o: ..\USER\system_stm32f10x.h
 ..\OBJ\sim808.o: ..\USER\stm32f10x_conf.h
-..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\OBJ\sim808.o: ..\USER\stm32f10x.h
+..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_fsmc.h
 ..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
 ..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\OBJ\sim808.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
