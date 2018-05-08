@@ -12,14 +12,15 @@
 #include "stdio.h"
 #include "lcd.h"
 #include "tsensor.h"
+#include "ds18b20.h" 
 
 #define callbuf  "13540328279"
  int8_t  src_api_key[] = "4=FIl6GSKGpTo5MFQrDHuxVrlUA=";
  int8_t  src_dev[] = "29547977"; 
 extern volatile uint32_t   usart3_rcv_len;
 	u16 adcx;
-	float temp;
- 	float temperate;
+	short b_temp;
+ 	float cpu_temp;
 void get_temp();
 
 
@@ -37,17 +38,18 @@ void get_temp();
 	KEY_Init();          //初始化与按键连接的硬件接口
 	LCD_Init();			 	
  	T_Adc_Init();		  		//ADC初始化 
+	DS18B20_Init();
 	
 	POINT_COLOR=RED;//设置字体为红色 
-	LCD_ShowString(60,50,200,16,16,"Loco‘s Grad-proj");	
-	LCD_ShowString(60,70,200,16,16,"CPU Internal temperature");	
+	LCD_ShowString(60,50,200,16,16,"Grad-proj for Loco");	
+	LCD_ShowString(60,70,200,16,16,"Data Collection");	
 // 	LCD_ShowString(60,90,200,16,16,"ATOM@ALIENTEK");
 // 	LCD_ShowString(60,110,200,16,16,"2012/9/7");	
 	//显示提示信息											      
 	POINT_COLOR=BLUE;//设置字体为蓝色
-	LCD_ShowString(60,130,200,16,16,"TEMP_VAL:");	      
-	LCD_ShowString(60,150,200,16,16,"TEMP_VOL:0.000V");	      
-	LCD_ShowString(60,170,200,16,16,"TEMPERATE:00.00C");	
+		LCD_ShowString(60,130,200,16,16,"Temp:   . C");	 	      
+//	LCD_ShowString(60,150,200,16,16,"TEMP_VOL:0.000V");	      
+	LCD_ShowString(60,170,200,16,16,"CPU TEMPERATE:00.00C");	
 	 
 // u2_printf("ATD%s;\r\n",callbuf);
 //	gprs_init();
@@ -92,31 +94,41 @@ void get_temp();
  //       Save_Pm2p5ToOneNet();
 	//	Ping_Server();
 		get_temp();
-		restful_send(src_dev, src_api_key,"my_data",(int)temp);
- 		delay_ms(1000);
-		restful_send(src_dev, src_api_key,"sys_time",(int)temperate);
- 		delay_ms(1000);
+		restful_send(src_dev, src_api_key,"cpu_temp",(int)cpu_temp);
+ 		delay_ms(200);
+		restful_send(src_dev, src_api_key,"18b_temp",(int)(b_temp/10));
+ 		delay_ms(200);
 	}	 
  }
 
 
 void get_temp()
 {
-	float temp1,temp2;
+	float temp,temp1,temp2;
 	
 	adcx=T_Get_Adc_Average(ADC_CH_TEMP,10);
-		LCD_ShowxNum(132,130,adcx,4,16,0);//显示ADC的值
+//		LCD_ShowxNum(132,130,adcx,4,16,0);//显示ADC的值
 		temp=(float)adcx*(3.3/4096);
-		temperate=temp;//保存温度传感器的电压值
-		adcx=temp;
-		LCD_ShowxNum(132,150,adcx,1,16,0);     		//显示电压值整数部分
-		temp1=temp-(u8)temp;				    			//减掉整数部分		  
-		LCD_ShowxNum(148,150,temp1*1000,3,16,0X80);	//显示电压小数部分
-										  
-		temperate=(1.43-temperate)/0.0043+25;		//计算出当前温度值	 
-		LCD_ShowxNum(140,170,(u8)temperate,2,16,0); //显示温度整数部分
-		temp2=temperate-(u8)temperate;	  
-		LCD_ShowxNum(164,170,temp2*100,2,16,0X80);//显示温度小数部分
+		cpu_temp=temp;//保存温度传感器的电压值
+	
+ 		adcx=temp;
+// 		LCD_ShowxNum(132,150,adcx,1,16,0);     		//显示电压值整数部分
+// 		temp1=temp-(u8)temp;				    			//减掉整数部分		  
+// 		LCD_ShowxNum(148,150,temp1*1000,3,16,0X80);	//显示电压小数部分
+			
+		b_temp=DS18B20_Get_Temp();	
+			if(b_temp<0)
+			{
+				LCD_ShowChar(60+40,130,'-',16,0);			//显示负号
+				b_temp=-b_temp;					//转为正数
+			}else LCD_ShowChar(60+40,130,' ',16,0);			//去掉负号
+			LCD_ShowNum(60+40+8,130,b_temp/10,2,16);	//显示正数部分	    
+   		LCD_ShowNum(60+40+32,130,b_temp%10,1,16);	//显示小数部分 	
+	
+		cpu_temp=(1.43-cpu_temp)/0.0043+25;		//计算出当前温度值	 
+		LCD_ShowxNum(60+14*8,170,(u8)cpu_temp,2,16,0); //显示温度整数部分
+		temp2=cpu_temp-(u8)cpu_temp;	  
+		LCD_ShowxNum(60+24+14*8,170,temp2*100,2,16,0X80);//显示温度小数部分
 		LED0=!LED0;
 		delay_ms(250);
 	

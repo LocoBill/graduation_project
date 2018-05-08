@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP;..\SIM808;..\HARDWARE\USART3;..\HARDWARE\TIME;..\HARDWARE\ITEMP;..\HARDWARE\ADC;..\HARDWARE\LCD</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP;..\SIM808;..\HARDWARE\USART3;..\HARDWARE\TIME;..\HARDWARE\ITEMP;..\HARDWARE\ADC;..\HARDWARE\LCD;..\HARDWARE\DS18B20</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -450,6 +450,11 @@
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\LCD\lcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>ds18b20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\DS18B20\ds18b20.c</FilePath>
             </File>
           </Files>
         </Group>

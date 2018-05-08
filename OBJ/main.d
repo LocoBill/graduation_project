@@ -33,3 +33,4 @@
 ..\OBJ\main.o: ..\EDP\utils.h
 ..\OBJ\main.o: ..\HARDWARE\LCD\lcd.h
 ..\OBJ\main.o: ..\HARDWARE\ITEMP\tsensor.h
+..\OBJ\main.o: ..\HARDWARE\DS18B20\ds18b20.h

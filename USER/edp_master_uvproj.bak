@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP;..\SIM808;..\HARDWARE\USART3;..\HARDWARE\TIME</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\USART2;..\EDP;..\SIM808;..\HARDWARE\USART3;..\HARDWARE\TIME;..\HARDWARE\ITEMP;..\HARDWARE\ADC;..\HARDWARE\LCD</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -436,6 +436,21 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\TIME\timer.c</FilePath>
             </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ADC\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>tsensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\ITEMP\tsensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>lcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\LCD\lcd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -495,6 +510,16 @@
               <FileName>stm32f10x_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F10x_FWLib\src\stm32f10x_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_fsmc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_fsmc.c</FilePath>
             </File>
           </Files>
         </Group>
